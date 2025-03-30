@@ -156,10 +156,11 @@ def main():
         data = clean_data(year, phase)
         embeddings_layer = EmbeddingsLayer(hops=None, ontology=ontology, device=device)
         embeddings_dir = EmbeddingsDataset(year=year, device=device, phase=phase, ont_hops=None, empty_ok=True).dir
-        generate_embeddings(embeddings_layer, data, embeddings_dir)c
+        generate_embeddings(embeddings_layer, data, embeddings_dir)
 
-        #if phase == 'Train':
-            #continue
+        # if phase == 'Train':
+        #     continue
+
 
         # inject knowledge for test datasets
         for ont_hops in range(3):

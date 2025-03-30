@@ -18,10 +18,11 @@ from utils import EmbeddingsDataset, train_validation_split
 class HyperOptManager:
     """A class that performs hyperparameter optimization and stores the best states as checkpoints."""
 
-    def __init__(self, year: int, val_ont_hops: Optional[int]):
+    def __init__(self, year: int, val_ont_hops: Optional[int], ont_hops: Optional[int] = None):
         self.year = year
         self.n_epochs = 20
         self.val_ont_hops = val_ont_hops
+        self.ont_hops = ont_hops
 
         self.eval_num = 0
         self.best_loss = None
@@ -34,6 +35,10 @@ class HyperOptManager:
 
         # read checkpoint if exists
         self.__checkpoint_dir = f"data/checkpoints/{year}_epochs{self.n_epochs}"
+        if ont_hops is not None:
+            self.__checkpoint_dir += f"_ont_hops{ont_hops}"
+        if val_ont_hops is not None:
+            self.__checkpoint_dir += f"_val_ont_hops{val_ont_hops}"
 
         if os.path.isdir(self.__checkpoint_dir):
             try:
@@ -77,12 +82,10 @@ class HyperOptManager:
         print(f"Using {train_dataset} with {len(train_dataset)} obs for training")
         train_idx, validation_idx = train_validation_split(train_dataset)
 
-        ont_hops = None
-
         training_subset: Subset
-        if ont_hops is not None:
+        if self.ont_hops is not None:
             train_ont_dataset = EmbeddingsDataset(year=self.year, device=self.device, phase="Train",
-                                                  ont_hops=ont_hops)
+                                                  ont_hops=self.ont_hops)
             training_subset = Subset(train_ont_dataset, train_idx)
             print(f"Using {train_ont_dataset} with {len(training_subset)} obs for training")
         else:
@@ -208,15 +211,17 @@ class HyperOptManager:
 def main():
     # parse CLI args
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument("--year", default=2015, type=int, help="The year of the dataset (2015 or 2016)")
-    #default is None
+    parser.add_argument("--year", default=2014, type=int, help="The year of the dataset (2015 or 2016)")
+    parser.add_argument("--ont-hops", default=None, type=int, required=False,
+                        help="The number of hops to use in the training phase")
     parser.add_argument("--val-ont-hops", default=None, type=int, required=False,
                         help="The number of hops to use in the validation phase")
     args = parser.parse_args()
     val_ont_hops: Optional[int] = args.val_ont_hops
+    ont_hops: Optional[int] = args.ont_hops
     year: int = args.year
 
-    opt = HyperOptManager(year=year, val_ont_hops=val_ont_hops)
+    opt = HyperOptManager(year=year, val_ont_hops=val_ont_hops, ont_hops=ont_hops)
     opt.run()
 
 
