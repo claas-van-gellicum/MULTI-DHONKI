@@ -24,7 +24,8 @@ The training and validation process consists of four steps. Each step requires t
 
 ### Step 1: Preprocessing
 
-Run `main_preprocess.py`. This step cleans the data and generates the embeddings. Specify the year, domain, phase in which to inject knowledge and the amount of ontology hops.
+
+Run `main_preprocess.py`. This step cleans the data and generates the embeddings. Specify the year, domain, phase of the dataset and the amount of ontology hops.
 
 ### Step 2: Hyperparameter Optimization
 
@@ -42,6 +43,7 @@ Run `main_validate.py`. This will evaluate the trained model on the test set and
 ### Alternative: Running All Steps Automatically
 
 To automatically execute the entire pipeline for training and evaluating all model configurations, you can run `run_all.py`. This script sequentially performs preprocessing, hyperparameter tuning and training for all predefined combinations of domain, year, and ontology hops. This allows you to reproduce all results with a single command, except for obtaining validation results. Refer to `main_validate.py` as some parameters (such as gamma) need to be set manually.
+
 
 ## References
 
