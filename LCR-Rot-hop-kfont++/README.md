@@ -1,27 +1,31 @@
-# LCR-Rot-hop-Kfont++
+# LCR-Rot-hop-Kfont++ with Multipule Hops, Domains, Regimes
 
-Source code for injecting knowledge from a domain-specific ontology into LCR-Rot-hop++ inspired by work on Kformer for Aspect-Based Sentiment Classification. 
+Source code for expanding LCR-Rot-hop-Kfont++ (a method injecting knowledge from a domain-specific ontology into LCR-Rot-hop++ inspired by work on Kformer for Aspect-Based Sentiment Classification) into multipule hops, domains and more regimes.  
 
 ## Setup
 - Create environment
-   - Create a conda environment in Python 3.10
+   - Create a environment in Python 3.11
    - Install the required packages by running `pip install -r requirements.txt` in the terminal
 
  
 - Download data
   - Download the following files
-    - Train and test data from [SemEval 2015](http://alt.qcri.org/semeval2015/task12/index.php?id=data-and-tools)
-    - Train and test data from [SemEval 2016](http://alt.qcri.org/semeval2016/task5/index.php?id=data-and-tools)
-    - Restaurant [ontology](https://github.com/KSchouten/Heracles/tree/master/src/main/resources/externalData)
-  - Add the files to 'data/raw' and rename them to the following:
-    - `ABSA15_Restaurants_Test.xml`
-    - `ABSA15_Restaurants_Train.xml`
-    - `ABSA16_Restaurants_Test.xml`
-    - `ABSA16_Restaurants_Train.xml`
-    - `ontology.owl`
+    - Train and test data of:
+      - SemEval-2014 Task 4 Laptop and Restaurant
+      - SemEval-2015 Task 12 Restaurant
+      - SemEval-2016 Task 5 Restaurant
+
+  - Also add ontology files in these two domains.
+
+  - Add the files to 'data/raw' and rename them to the following: `ABSA{year}_{domain}_{Test\train}.xml`
+    for example: `ABSA15_Restaurants_Train.xml`, `ABSA16_Restaurants_Train.xml`, `ABSA14_Laptops_Train.xml`
+    For ontology: `ontology_{domain}.owl`
    
 - Use OWL2Vec to create vectors of the ontology
-   - Follow the Readme file of [Owl2Vec*](https://github.com/KRR-Oxford/OWL2Vec-Star.git)
+   - Clone the OWL2Vec-Star repository  from [Owl2Vec*](https://github.com/KRR-Oxford/OWL2Vec-Star.git)
+   - Copy `ontology_embedding.py` file to the OWL2Vec-Star directory
+   - Set `default.cfg` file in the OWL2Vec-Star directory (enable reasoner)
+   - Initial folder data/embeddings/ontology_laptops/output/ and data/embeddings/ontology_restaurant/output/
    - For this work, the hermit reasoner was used and an embedding size of 100
    - Save the OWL2Vec ontology to 'data/raw'
 
@@ -29,23 +33,9 @@ Source code for injecting knowledge from a domain-specific ontology into LCR-Rot
 ## Training and validating the model
 The following files can be used to obtain the results:
 
-- `main_preprocess.py`: removes opinions that contain implicit targets and generates the sentences into the correct format for the BERT model to use. To generate all embeddings for a given year, run `python main_preprocess.py --all`
-- `main_hyperparam.py`: This runs the hyperparameter tuning. Change the year, the ontology path in the FFN layer and knowledge injection layers for both the training and validating step. 
-- `main_train.py`: train the model for a given set of hyperparameters. Again change the year, the ontology path in the FFN layer and choose the desired knowledge injection layers for both training and validating. 
-- `main_validate.py`: validate a trained model. Choose if and for which transformer layers knowledge should be injected. You can specify your model path by running python `main_validate.py --model "Model path"` in the terminal. 
+- `main_preprocess.py`: Removes opinions that contain implicit targets and "conflict" polarities and generates the sentences into the correct format for the BERT model to use. To generate all embeddings for a given year, run `python main_preprocess.py --all`. (If need to extend it to more datasets, modify the program to accommodate different dataset structures.)
+- `main_hyperparam.py`: This runs the hyperparameter tuning. Change the year, domains, knowledge injection hops and whether inject in validating. For large dataset can choose propotional dataset for searching hyperparameters. 
+- `main_train.py`: Train the model for a given set of hyperparameters. Change the year, domains, knowledge injection hops and whether inject in validating. 
+- `main_validate.py`: Validate a trained model. Choose whether inject knowledge in validating and the ontology hops in injecting.
 
-## Acknowledgements
-
-Code and ideas are used from:
-- https://github.com/wesselvanree/LCR-Rot-hop-ont-plus-plus.git
-- https://github.com/StijnCoremans/LCR-Rot-hop-ont.git
-- https://github.com/Bjarten/early-stopping-pytorch/blob/master/pytorchtools.py
-- https://github.com/KRR-Oxford/OWL2Vec-Star.git
-- https://github.com/autoliuweijie/K-BERT.git
-- Trusca, M. M., Wassenberg, D., Frasincar, F., and Dekker, R. (2020). A hybrid approach
-  for aspect-based sentiment analysis using deep contextual word embeddings and hierarchical
-  attention. In 20th Conference on Web Engineering (ICWE 2020), volume 12128 of LNCS, pages 365–380. Springer.
-- Yao, Y., Huang, S., Dong, L., Wei, F., Chen, H., and Zhang, N. (2022). Kformer: Knowledge
-  Injection in Transformer Feed-Forward Layers. In 11th International Conference on Natural
-  Language Processing and Chinese Computing (NLPCC 2022), volume 13551, pages 131–143. Springer.
-
+This code is base on source code of LCR-Rot-hop-Kfont++ which can be found [here](https://anonymous.4open.science/r/LCR-Rot-hop-Kfont_plus_plus-D6F8/README.md).

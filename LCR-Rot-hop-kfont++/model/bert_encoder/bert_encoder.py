@@ -21,11 +21,11 @@ class BertEncoder(nn.Module):
     BERT encoder exploits 12 or 24 transformer layers to extract features.
     """
 
-    def __init__(self, model, dense1, dense2, proj1, proj2, args=BertEncoderArgs()):
+    def __init__(self, model, dense1, dense2, proj1, proj2, domain, ont_hops=0, gamma=0.0, args=BertEncoderArgs()):
         super(BertEncoder, self).__init__()
         self.layers_num = args.layers_num
         self.transformer = nn.ModuleList([
-            TransformerLayer(args, model.base_model.encoder.layer._modules.get(key), currentLayerIndex=i, dense1=dense1, dense2=dense2, proj1=proj1, proj2=proj2)
+            TransformerLayer(args, model.base_model.encoder.layer._modules.get(key), currentLayerIndex=i, dense1=dense1, dense2=dense2, proj1=proj1, proj2=proj2, domain=domain, ont_hops=ont_hops, gamma=gamma)
             for i, key in enumerate(model.base_model.encoder.layer._modules)
         ])
 

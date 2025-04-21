@@ -18,11 +18,13 @@ from utils import EmbeddingsDataset, train_validation_split
 class HyperOptManager:
     """A class that performs hyperparameter optimization and stores the best states as checkpoints."""
 
-    def __init__(self, year: int, val_ont_hops: Optional[int], ont_hops: Optional[int] = None):
+    def __init__(self, year: int, domain: str, val_ont_hops: Optional[int], ont_hops: Optional[int] = None, max_evals: Optional[int] = 10):
         self.year = year
         self.n_epochs = 20
         self.val_ont_hops = val_ont_hops
         self.ont_hops = ont_hops
+        self.domain = domain
+        self.max_evals = max_evals
 
         self.eval_num = 0
         self.best_loss = None
@@ -34,11 +36,11 @@ class HyperOptManager:
                                    'mps' if torch.backends.mps.is_available() else 'cpu')
 
         # read checkpoint if exists
-        self.__checkpoint_dir = f"data/checkpoints/{year}_epochs{self.n_epochs}"
-        if ont_hops is not None:
-            self.__checkpoint_dir += f"_ont_hops{ont_hops}"
-        if val_ont_hops is not None:
-            self.__checkpoint_dir += f"_val_ont_hops{val_ont_hops}"
+        self.__checkpoint_dir = f"data/checkpoints/{domain}_{year}"
+        #if ont_hops is not None:
+        self.__checkpoint_dir += f"_ont_hops{ont_hops}"
+        #if val_ont_hops is not None:
+        self.__checkpoint_dir += f"_val_ont_hops{val_ont_hops}"
 
         if os.path.isdir(self.__checkpoint_dir):
             try:
@@ -58,18 +60,19 @@ class HyperOptManager:
             print("Starting from scratch")
 
     def run(self):
-        # TODO: convert to dict for better readability in json file?
         space = [
             hp.choice('learning_rate', [0.005, 0.001, 0.01, 0.02, 0.05, 0.06, 0.07, 0.08, 0.09, 0.1]),
             hp.quniform('dropout_rate', 0.25, 0.75, 0.1),
             hp.choice('momentum', [0.85, 0.9, 0.95, 0.99]),
             hp.choice('weight_decay', [0.00001, 0.0001, 0.001, 0.01, 0.1]),
-            hp.choice('lcr_hops', [3]), 
-            hp.choice('gamma', [0])
-            # hp.quniform('gamma', -1.5, 1.5, 0.1)
-        ]
+            hp.choice('lcr_hops', [3])
+            ]
+        if self.ont_hops is not None or self.val_ont_hops is not None:
+            space.append(hp.quniform('gamma', -1.5, 1.5, 0.1))
+        else:
+            space.append(hp.choice('gamma', [0]))
 
-        best = fmin(self.objective, space=space, algo=tpe.suggest, trials=self.trials, show_progressbar=False)
+        best = fmin(self.objective, space=space, algo=tpe.suggest, trials=self.trials, show_progressbar=False, max_evals=self.max_evals)
 
     # in case of ont in train extra if statement for correct embedingsdataset adapt ont_hops etc.
     def objective(self, hyperparams):
@@ -216,12 +219,17 @@ def main():
                         help="The number of hops to use in the training phase")
     parser.add_argument("--val-ont-hops", default=None, type=int, required=False,
                         help="The number of hops to use in the validation phase")
+    parser.add_argument("--domain", default="Restaurant", help="The domain of the dataset (Restaurant or Laptop)")
+    parser.add_argument("--max-evals", default = 10, type = int, help= "Number of evaluations for hyperopt")
+
     args = parser.parse_args()
     val_ont_hops: Optional[int] = args.val_ont_hops
     ont_hops: Optional[int] = args.ont_hops
     year: int = args.year
+    domain: str = args.domain
+    max_evals: Optional[int] = args.max_evals
 
-    opt = HyperOptManager(year=year, val_ont_hops=val_ont_hops, ont_hops=ont_hops)
+    opt = HyperOptManager(year=year, val_ont_hops=val_ont_hops, ont_hops=ont_hops, max_evals= max_evals, domain = domain)
     opt.run()
 
 

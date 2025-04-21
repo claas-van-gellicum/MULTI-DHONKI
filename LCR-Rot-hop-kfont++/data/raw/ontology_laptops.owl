@@ -1,0 +1,2387 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#"
+     xml:base="hhttp://www.semanticweb.org/karoliina/ontologies/2017/4/laptop"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:laptop="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#aspect -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#aspect"/>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#lex -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#lex"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Acer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Acer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>acer</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Affordable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Affordable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PricePositiveSentiment"/>
+        <laptop:lex>affordable</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Amazing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Amazing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>amazing</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Antiglare -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Antiglare">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayPositiveSentiment"/>
+        <laptop:lex>antiglare</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Apple -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Apple">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>apple</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Application -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Application">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareMention"/>
+        <laptop:lex>app</laptop:lex>
+        <laptop:lex>application</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Asus -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Asus">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>asus</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AttachmentsMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AttachmentsMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>PORTS#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>PORTS#GENERAL</laptop:aspect>
+        <laptop:aspect>PORTS#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>PORTS#QUALITY</laptop:aspect>
+        <laptop:aspect>PORTS#USABILITY</laptop:aspect>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Awesome -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Awesome">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>awesome</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNegativeSentiment"/>
+        <laptop:lex>bad</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bargain -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bargain">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PricePositiveSentiment"/>
+        <laptop:lex>bargain</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#BatteryMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#BatteryMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PowerMention"/>
+        <laptop:aspect>BATTERY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>BATTERY#MISCELLANEOUS</laptop:aspect>
+        <laptop:aspect>BATTERY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>BATTERY#QUALITY</laptop:aspect>
+        <laptop:aspect>BATTERY#USABILITY</laptop:aspect>
+        <laptop:lex>battery</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Beautiful -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Beautiful">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresPositiveSentiment"/>
+        <laptop:lex>beautiful</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Benchmark -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Benchmark">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Operation_performanceMention"/>
+        <laptop:lex>benchmark</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Best -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Best">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>best</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bios -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bios">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MotherboardMention"/>
+        <laptop:lex>bios</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Blurry -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Blurry">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayNegativeSentiment"/>
+        <laptop:lex>blurry</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Brand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Brand">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>brand</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Brightness -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Brightness">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayMention"/>
+        <laptop:lex>brightness</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Broken -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Broken">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>broken</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Budget -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Budget">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        <laptop:lex>budget</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bug -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bug">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareMention"/>
+        <laptop:lex>bug</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Buggy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Buggy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareNegativeSentiment"/>
+        <laptop:lex>buggy</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bulky -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Bulky">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityNegativeSentiment"/>
+        <laptop:lex>bulky</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention"/>
+        <laptop:lex>cable</laptop:lex>
+        <laptop:lex>wire</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Calculation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Calculation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Operation_performanceMention"/>
+        <laptop:lex>calculation</laptop:lex>
+        <laptop:lex>operation</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Optical_drivesMention"/>
+        <laptop:lex>bluray</laptop:lex>
+        <laptop:lex>cd</laptop:lex>
+        <laptop:lex>disk</laptop:lex>
+        <laptop:lex>dvd</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Charger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Charger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#BatteryMention"/>
+        <laptop:lex>charger</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cheap -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cheap">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PricePositiveSentiment"/>
+        <laptop:lex>cheap</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Chipset -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Chipset">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MotherboardMention"/>
+        <laptop:lex>chipset</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Clear -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Clear">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayPositiveSentiment"/>
+        <laptop:lex>clear</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Click -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Click">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MouseMention"/>
+        <laptop:lex>click</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Clockrate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Clockrate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuMention"/>
+        <laptop:lex>clock rate</laptop:lex>
+        <laptop:lex>hertz</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Clunky -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Clunky">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityNegativeSentiment"/>
+        <laptop:lex>clunky</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Colorful -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Colorful">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayPositiveSentiment"/>
+        <laptop:lex>colorful</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ServiceMention"/>
+        <laptop:aspect>COMPANY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>COMPANY#GENERAL</laptop:aspect>
+        <laptop:aspect>COMPANY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>COMPANY#QUALITY</laptop:aspect>
+        <laptop:aspect>COMPANY#USABILITY</laptop:aspect>
+        <laptop:lex>company</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>LAPTOP#CONNECTIVITY</laptop:aspect>
+        <laptop:lex>connectivity</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityPositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityPositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ContextDependentSentimentMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ContextDependentSentimentMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>KEYBOARD#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>KEYBOARD#GENERAL</laptop:aspect>
+        <laptop:aspect>KEYBOARD#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>KEYBOARD#QUALITY</laptop:aspect>
+        <laptop:aspect>KEYBOARD#USABILITY</laptop:aspect>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsPositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsPositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cool">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingPositiveSentiment"/>
+        <laptop:lex>cold</laptop:lex>
+        <laptop:lex>cool</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cooling -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Cooling">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingMention"/>
+        <laptop:lex>cooling</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Core -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Core">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuMention"/>
+        <laptop:lex>core</laptop:lex>
+        <laptop:lex>dual core</laptop:lex>
+        <laptop:lex>dual-core</laptop:lex>
+        <laptop:lex>dualcore</laptop:lex>
+        <laptop:lex>i3</laptop:lex>
+        <laptop:lex>i5</laptop:lex>
+        <laptop:lex>i7</laptop:lex>
+        <laptop:lex>quad core</laptop:lex>
+        <laptop:lex>quad-core</laptop:lex>
+        <laptop:lex>quadcore</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>CPU#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>CPU#GENERAL</laptop:aspect>
+        <laptop:aspect>CPU#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>CPU#QUALITY</laptop:aspect>
+        <laptop:aspect>CPU#USABILITY</laptop:aspect>
+        <laptop:lex>central processing unit</laptop:lex>
+        <laptop:lex>cpu</laptop:lex>
+        <laptop:lex>processor</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuPositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuPositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Crash -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Crash">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#OsMention"/>
+        <laptop:lex>crash</laptop:lex>
+        <laptop:lex>hardcrash</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Crashing -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Crashing">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareNegativeSentiment"/>
+        <laptop:lex>crashing</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Creative -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Creative">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>creative</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Decent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Decent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNeutralSentiment"/>
+        <laptop:lex>decent</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Defect -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Defect">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#WarrantyMention"/>
+        <laptop:lex>defect</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Delivery -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Delivery">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ShippingMention"/>
+        <laptop:lex>delivery</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Dell -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Dell">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>dell</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>BATTERY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>COMPANY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>CPU#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>DISPLAY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>FANS_COOLING#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>GRAPHICS#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>HARDWARE#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>HARD_DISK#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>KEYBOARD#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>LAPTOP#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>MEMORY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>MOTHERBOARD#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>MOUSE#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>MULTIMEDIA_DEVICES#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>OPTICAL_DRIVES#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>OS#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>PORTS#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>POWER_SUPPLY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>SHIPPING#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>SOFWARE#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>SUPPORT#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>WARRANTY#DESIGN_FEATURES</laptop:aspect>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresPositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresPositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Detail -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Detail">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresMention"/>
+        <laptop:lex>detail</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>DISPLAY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>DISPLAY#GENERAL</laptop:aspect>
+        <laptop:aspect>DISPLAY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>DISPLAY#QUALITY</laptop:aspect>
+        <laptop:aspect>DISPLAY#USABILITY</laptop:aspect>
+        <laptop:lex>display</laptop:lex>
+        <laptop:lex>screen</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayPositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayPositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Dollar -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Dollar">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        <laptop:lex>buck</laptop:lex>
+        <laptop:lex>dollar</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Dusty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Dusty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingNegativeSentiment"/>
+        <laptop:lex>dirty</laptop:lex>
+        <laptop:lex>dusty</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Enjoyable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Enjoyable">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>enjoyable</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Error -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Error">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareMention"/>
+        <laptop:lex>error</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ethernet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ethernet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention"/>
+        <laptop:lex>ethernet</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Euro -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Euro">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        <laptop:lex>euro</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Excellent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Excellent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>excellent</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Expensive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Expensive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceNegativeSentiment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fabulous -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fabulous">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>fabulous</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingMention"/>
+        <laptop:lex>fan</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>FANS_COOLING#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>FANS_COOLING#GENERAL</laptop:aspect>
+        <laptop:aspect>FANS_COOLING#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>FANS_COOLING#QUALITY</laptop:aspect>
+        <laptop:aspect>FANS_COOLING#USABILITY</laptop:aspect>
+        <laptop:lex>cooling</laptop:lex>
+        <laptop:lex>fan</laptop:lex>
+        <laptop:lex>fans</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingPositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingPositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ContextDependentSentimentMention"/>
+        <laptop:lex>fast</laptop:lex>
+        <laptop:lex>quick</laptop:lex>
+        <laptop:lex>speedy</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Favorite -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Favorite">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>favorite</laptop:lex>
+        <laptop:lex>favourite</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fps -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fps">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GraphicsMention"/>
+        <laptop:lex>fps</laptop:lex>
+        <laptop:lex>frames per second</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Game">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GraphicsMention"/>
+        <laptop:lex>game</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNeutralSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNeutralSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Neutral"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Gigabyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Gigabyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SpaceMention"/>
+        <laptop:lex>gb</laptop:lex>
+        <laptop:lex>gigabyte</laptop:lex>
+        <laptop:lex>mb</laptop:lex>
+        <laptop:lex>megabyte</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Glare -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Glare">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayNegativeSentiment"/>
+        <laptop:lex>glare</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Good -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Good">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>good</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GraphicsMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GraphicsMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>GRAPHICS#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>GRAPHICS#GENERAL</laptop:aspect>
+        <laptop:aspect>GRAPHICS#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>GRAPHICS#QUALITY</laptop:aspect>
+        <laptop:aspect>GRAPHICS#USABILITY</laptop:aspect>
+        <laptop:lex>graphics</laptop:lex>
+        <laptop:lex>visuals</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Graphicscard -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Graphicscard">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GraphicsMention"/>
+        <laptop:lex>gpu</laptop:lex>
+        <laptop:lex>graphicscard</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Great -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Great">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>great</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#HalfDecent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#HalfDecent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNegativeSentiment"/>
+        <laptop:lex>halfdecent</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Handy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Handy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityPositiveSentiment"/>
+        <laptop:lex>handy</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hard_diskMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hard_diskMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SpaceMention"/>
+        <laptop:aspect>HARD_DISK#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>HARD_DISK#GENERAL</laptop:aspect>
+        <laptop:aspect>HARD_DISK#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>HARD_DISK#QUALITY</laptop:aspect>
+        <laptop:aspect>HARD_DISK#USABILITY</laptop:aspect>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#HardwareMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#HardwareMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>HARDWARE#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>HARDWARE#GENERAL</laptop:aspect>
+        <laptop:aspect>HARDWARE#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>HARDWARE#QUALITY</laptop:aspect>
+        <laptop:aspect>HARDWARE#USABILITY</laptop:aspect>
+        <laptop:lex>hardware</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Resolution"/>
+        <laptop:lex>1080p</laptop:lex>
+        <laptop:lex>HD</laptop:lex>
+        <laptop:lex>HighDef</laptop:lex>
+        <laptop:lex>HighDefinition</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hdmi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hdmi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention"/>
+        <laptop:lex>hdmi</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#HeadphoneJack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#HeadphoneJack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention"/>
+        <laptop:lex>headphone jack</laptop:lex>
+        <laptop:lex>headphonejack</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Heavy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Heavy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityNegativeSentiment"/>
+        <laptop:lex>heavy</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#High -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#High">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ContextDependentSentimentMention"/>
+        <laptop:lex>big</laptop:lex>
+        <laptop:lex>high</laptop:lex>
+        <laptop:lex>large</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hold -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hold">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SupportMention"/>
+        <laptop:lex>hold</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Horrible -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Horrible">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNegativeSentiment"/>
+        <laptop:lex>horrible</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Horrid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Horrid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNegativeSentiment"/>
+        <laptop:lex>horrid</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hot">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingNegativeSentiment"/>
+        <laptop:lex>hot</laptop:lex>
+        <laptop:lex>warm</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>hp</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Inexpensive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Inexpensive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PricePositiveSentiment"/>
+        <laptop:lex>inexpensive</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Innovative -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Innovative">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>innovative</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Internet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Internet">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityMention"/>
+        <laptop:lex>internet</laptop:lex>
+        <laptop:lex>web</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ios -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ios">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#OsMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Jack -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Jack">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention"/>
+        <laptop:lex>jack</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Key -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Key">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsMention"/>
+        <laptop:lex>button</laptop:lex>
+        <laptop:lex>hotkey</laptop:lex>
+        <laptop:lex>key</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#KeyboardMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#KeyboardMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsMention"/>
+        <laptop:lex>keyboard</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#laptopMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#laptopMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>LAPTOP#CONNECTIVITY</laptop:aspect>
+        <laptop:aspect>LAPTOP#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>LAPTOP#GENERAL</laptop:aspect>
+        <laptop:aspect>LAPTOP#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>LAPTOP#PORTABILITY</laptop:aspect>
+        <laptop:aspect>LAPTOP#PRICE</laptop:aspect>
+        <laptop:aspect>LAPTOP#QUALITY</laptop:aspect>
+        <laptop:aspect>LAPTOP#USABILITY</laptop:aspect>
+        <laptop:lex>computer</laptop:lex>
+        <laptop:lex>laptop</laptop:lex>
+        <laptop:lex>pc</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Layout -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Layout">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#KeyboardMention"/>
+        <laptop:lex>layout</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Lenovo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Lenovo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>lenovo</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Letter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Letter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#KeyboardMention"/>
+        <laptop:lex>letter</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Light -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Light">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityPositiveSentiment"/>
+        <laptop:lex>light</laptop:lex>
+        <laptop:lex>lightweight</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Linux -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Linux">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#OsMention"/>
+        <laptop:lex>linux</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Look -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Look">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresMention"/>
+        <laptop:lex>look</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Loud -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Loud">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingNegativeSentiment"/>
+        <laptop:lex>loud</laptop:lex>
+        <laptop:lex>noisy</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Low -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Low">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ContextDependentSentimentMention"/>
+        <laptop:lex>little</laptop:lex>
+        <laptop:lex>low</laptop:lex>
+        <laptop:lex>small</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MSI -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MSI">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>msi</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Macbook -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Macbook">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#laptopMention"/>
+        <laptop:lex>macbook</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Manufacturer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Manufacturer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>manufacturer</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Mechanical -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Mechanical">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsPositiveSentiment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Mediocre -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Mediocre">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNegativeSentiment"/>
+        <laptop:lex>mediocre</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Medion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Medion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>medion</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MemoryMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MemoryMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SpaceMention"/>
+        <laptop:lex>memory</laptop:lex>
+        <laptop:lex>space</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MicroSd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MicroSd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention"/>
+        <laptop:lex>microsd</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Moderate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Moderate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNeutralSentiment"/>
+        <laptop:lex>moderate</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Money -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Money">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        <laptop:lex>money</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MotherboardMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MotherboardMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>MOTHERBOARD#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>MOTHERBOARD#GENERAL</laptop:aspect>
+        <laptop:aspect>MOTHERBOARD#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>MOTHERBOARD#QUALITY</laptop:aspect>
+        <laptop:aspect>MOTHERBOARD#USABILITY</laptop:aspect>
+        <laptop:lex>baseboard</laptop:lex>
+        <laptop:lex>logic board</laptop:lex>
+        <laptop:lex>mainboard</laptop:lex>
+        <laptop:lex>mobo</laptop:lex>
+        <laptop:lex>motherboard</laptop:lex>
+        <laptop:lex>planar board</laptop:lex>
+        <laptop:lex>system board</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MouseMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MouseMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ControlsMention"/>
+        <laptop:aspect>MOUSE#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>MOUSE#GENERAL</laptop:aspect>
+        <laptop:aspect>MOUSE#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>MOUSE#QUALITY</laptop:aspect>
+        <laptop:aspect>MOUSE#USABILITY</laptop:aspect>
+        <laptop:lex>mouse</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MouseNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MouseNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MouseMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MousePositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MousePositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MouseMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Multimedia_devicesMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Multimedia_devicesMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AttachmentsMention"/>
+        <laptop:aspect>MULTIMEDIA_DEVICES#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>MULTIMEDIA_DEVICES#GENERAL</laptop:aspect>
+        <laptop:aspect>MULTIMEDIA_DEVICES#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>MULTIMEDIA_DEVICES#QUALITY</laptop:aspect>
+        <laptop:aspect>MULTIMEDIA_DEVICES#USABILITY</laptop:aspect>
+        <laptop:lex>multimedia devices</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Neutral -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Neutral">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#New -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#New">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>new</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Nice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Nice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>nice</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Notebook -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Notebook">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#laptopMention"/>
+        <laptop:lex>notebook</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ok -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ok">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNeutralSentiment"/>
+        <laptop:lex>ok</laptop:lex>
+        <laptop:lex>okay</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Old -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Old">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNegativeSentiment"/>
+        <laptop:lex>old</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Operation_performanceMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Operation_performanceMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>BATTERY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>COMPANY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>CPU#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>DISPLAY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>FANS_COOLING#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>GRAPHICS#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>HARDWARE#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>HARD_DISK#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>KEYBOARD#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>LAPTOP#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>MEMORY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>MOTHERBOARD#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>MOUSE#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>MULTIMEDIA_DEVICES#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>OPTICAL_DRIVERS#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>OS#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>PORTS#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>POWER_SUPPLY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>SHIPPING#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>SOFWARE#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>SUPPORT#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>WARRANTY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:lex>execution</laptop:lex>
+        <laptop:lex>operation</laptop:lex>
+        <laptop:lex>operation_performance</laptop:lex>
+        <laptop:lex>performance</laptop:lex>
+        <laptop:lex>procedure</laptop:lex>
+        <laptop:lex>process</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Optical_drivesMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Optical_drivesMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>OPTICAL_DRIVE#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>OPTICAL_DRIVE#GENERAL</laptop:aspect>
+        <laptop:aspect>OPTICAL_DRIVE#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>OPTICAL_DRIVE#QUALITY</laptop:aspect>
+        <laptop:aspect>OPTICAL_DRIVE#USABILITY</laptop:aspect>
+        <laptop:lex>drive</laptop:lex>
+        <laptop:lex>optical drive</laptop:lex>
+        <laptop:lex>optical_drive</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#OsMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#OsMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ProgramsMention"/>
+        <laptop:aspect>OS#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>OS#GENERAL</laptop:aspect>
+        <laptop:aspect>OS#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>OS#QUALITY</laptop:aspect>
+        <laptop:aspect>OS#USABILITY</laptop:aspect>
+        <laptop:lex>operating system</laptop:lex>
+        <laptop:lex>operating_system</laptop:lex>
+        <laptop:lex>os</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Overpriced -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Overpriced">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceNegativeSentiment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Overseas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Overseas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ShippingMention"/>
+        <laptop:lex>overseas</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Perfect -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Perfect">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>perfect</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Phenomenal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Phenomenal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>phenomenal</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Pleasant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Pleasant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>pleasant</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Plug -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Plug">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Power_supplyMention"/>
+        <laptop:lex>plug</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>LAPTOP#PORTABILITY</laptop:aspect>
+        <laptop:lex>portability</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityPositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityPositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AttachmentsMention"/>
+        <laptop:lex>port</laptop:lex>
+        <laptop:lex>slot</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentValue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PowerMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PowerMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>POWER_SUPPLY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>POWER_SUPPLY#GENERAL</laptop:aspect>
+        <laptop:aspect>POWER_SUPPLY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>POWER_SUPPLY#QUALITY</laptop:aspect>
+        <laptop:aspect>POWER_SUPPLY#USABILITY</laptop:aspect>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Power_supplyMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Power_supplyMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PowerMention"/>
+        <laptop:lex>power</laptop:lex>
+        <laptop:lex>powerbrick</laptop:lex>
+        <laptop:lex>powersupply</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Powerful -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Powerful">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>powerful</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Premium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Premium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>premium</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>LAPTOP#PRICE</laptop:aspect>
+        <laptop:aspect>SHIPPING#PRICE</laptop:aspect>
+        <laptop:aspect>SUPPORT#PRICE</laptop:aspect>
+        <laptop:aspect>WARRANTY#PRICE</laptop:aspect>
+        <laptop:lex>cost</laptop:lex>
+        <laptop:lex>price</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PricePositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PricePositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Pricey -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Pricey">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceNegativeSentiment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Program -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Program">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareMention"/>
+        <laptop:lex>program</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ProgramsMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ProgramsMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>SOFWARE#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>SOFWARE#GENERAL</laptop:aspect>
+        <laptop:aspect>SOFWARE#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>SOFWARE#QUALITY</laptop:aspect>
+        <laptop:aspect>SOFWARE#USABILITY</laptop:aspect>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#QualityMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#QualityMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>BATTERY#QUALITY</laptop:aspect>
+        <laptop:aspect>COMPANY#QUALITY</laptop:aspect>
+        <laptop:aspect>CPU#QUALITY</laptop:aspect>
+        <laptop:aspect>DISPLAY#QUALITY</laptop:aspect>
+        <laptop:aspect>FANS_COOLING#QUALITY</laptop:aspect>
+        <laptop:aspect>GRAPHICS#QUALITY</laptop:aspect>
+        <laptop:aspect>HARDWARE#QUALITY</laptop:aspect>
+        <laptop:aspect>HARD_DISK#QUALITY</laptop:aspect>
+        <laptop:aspect>KEYBOARD#QUALITY</laptop:aspect>
+        <laptop:aspect>LAPTOP#QUALITY</laptop:aspect>
+        <laptop:aspect>MEMORY#QUALITY</laptop:aspect>
+        <laptop:aspect>MOTHERBOARD#QUALITY</laptop:aspect>
+        <laptop:aspect>MOUSE#QUALITY</laptop:aspect>
+        <laptop:aspect>MULTIMEDIA_DEVICES#QUALITY</laptop:aspect>
+        <laptop:aspect>OPTICAL_DRIVES#QUALITY</laptop:aspect>
+        <laptop:aspect>OS#QUALITY</laptop:aspect>
+        <laptop:aspect>PORTS#QUALITY</laptop:aspect>
+        <laptop:aspect>POWER_SUPPLY#QUALITY</laptop:aspect>
+        <laptop:aspect>SHIPPING#QUALITY</laptop:aspect>
+        <laptop:aspect>SOFWARE#QUALITY</laptop:aspect>
+        <laptop:aspect>SUPPORT#QUALITY</laptop:aspect>
+        <laptop:aspect>WARRANTY#QUALITY</laptop:aspect>
+        <laptop:lex>quality</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ram -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ram">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MemoryMention"/>
+        <laptop:lex>ram</laptop:lex>
+        <laptop:lex>vram</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Reasonably -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Reasonably">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PricePositiveSentiment"/>
+        <laptop:lex>reasonably</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Refund -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Refund">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#WarrantyMention"/>
+        <laptop:lex>rebate</laptop:lex>
+        <laptop:lex>refund</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Replacement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Replacement">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#WarrantyMention"/>
+        <laptop:lex>replacement</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Resolution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Resolution">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayMention"/>
+        <laptop:lex>resolution</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Scroll -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Scroll">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MouseMention"/>
+        <laptop:lex>scroll</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentValue -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentValue"/>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ServiceMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ServiceMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>SUPPORT#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>SUPPORT#GENERAL</laptop:aspect>
+        <laptop:aspect>SUPPORT#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>SUPPORT#PRICE</laptop:aspect>
+        <laptop:aspect>SUPPORT#QUALITY</laptop:aspect>
+        <laptop:aspect>SUPPORT#USABILITY</laptop:aspect>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Sharp -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Sharp">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayPositiveSentiment"/>
+        <laptop:lex>sharp</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ShippingMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ShippingMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ServiceMention"/>
+        <laptop:aspect>SHIPPING#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>SHIPPING#GENERAL</laptop:aspect>
+        <laptop:aspect>SHIPPING#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>SHIPPING#PRICE</laptop:aspect>
+        <laptop:aspect>SHIPPING#QUALITY</laptop:aspect>
+        <laptop:aspect>SHIPPING#USABILITY</laptop:aspect>
+        <laptop:lex>shipping</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Silent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Silent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fans_coolingPositiveSentiment"/>
+        <laptop:lex>quiet</laptop:lex>
+        <laptop:lex>silent</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Size -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Size">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityMention"/>
+        <laptop:lex>size</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Slow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Slow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ContextDependentSentimentMention"/>
+        <laptop:lex>slow</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Socket -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Socket">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MotherboardMention"/>
+        <laptop:lex>slot</laptop:lex>
+        <laptop:lex>socket</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ProgramsMention"/>
+        <laptop:lex>software</laptop:lex>
+        <laptop:lex>sofware</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwarePositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwarePositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SofwareMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SpaceMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SpaceMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>MEMORY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>MEMORY#GENERAL</laptop:aspect>
+        <laptop:aspect>MEMORY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>MEMORY#QUALITY</laptop:aspect>
+        <laptop:aspect>MEMORY#USABILITY</laptop:aspect>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ssd -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Ssd">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hard_diskMention"/>
+        <laptop:lex>solid state drive</laptop:lex>
+        <laptop:lex>ssd</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Style -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Style">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresMention"/>
+        <laptop:lex>style</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SupportMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SupportMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ServiceMention"/>
+        <laptop:lex>help</laptop:lex>
+        <laptop:lex>service</laptop:lex>
+        <laptop:lex>support</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Terrabyte -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Terrabyte">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Hard_diskMention"/>
+        <laptop:lex>tb</laptop:lex>
+        <laptop:lex>terrabyte</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Terrible -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Terrible">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericNegativeSentiment"/>
+        <laptop:lex>terrible</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Thin -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Thin">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityPositiveSentiment"/>
+        <laptop:lex>thin</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Thread -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Thread">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CpuMention"/>
+        <laptop:lex>thread</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Toshiba -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Toshiba">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#CompanyMention"/>
+        <laptop:lex>toshiba</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Touchpad -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Touchpad">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MouseMention"/>
+        <laptop:lex>touchpad</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Unique -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Unique">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>unique</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#AspectMention"/>
+        <laptop:aspect>BATTERY#USABILITY</laptop:aspect>
+        <laptop:aspect>COMPANY#USABILITY</laptop:aspect>
+        <laptop:aspect>CPU#USABILITY</laptop:aspect>
+        <laptop:aspect>DISPLAY#USABILITY</laptop:aspect>
+        <laptop:aspect>FANS_COOLING#USABILITY</laptop:aspect>
+        <laptop:aspect>GRAPHICS#USABILITY</laptop:aspect>
+        <laptop:aspect>HARDWARE#USABILITY</laptop:aspect>
+        <laptop:aspect>HARD_DISK#USABILITY</laptop:aspect>
+        <laptop:aspect>KEYBOARD#USABILITY</laptop:aspect>
+        <laptop:aspect>LAPTOP#USABILITY</laptop:aspect>
+        <laptop:aspect>MEMORY#USABILITY</laptop:aspect>
+        <laptop:aspect>MOTHERBOARD#USABILITY</laptop:aspect>
+        <laptop:aspect>MOUSE#USABILITY</laptop:aspect>
+        <laptop:aspect>MULTIMEDIA_DEVICES#USABILITY</laptop:aspect>
+        <laptop:aspect>OPTICAL_DRIVES#USABILITY</laptop:aspect>
+        <laptop:aspect>OS#USABILITY</laptop:aspect>
+        <laptop:aspect>PORTS#USABILITY</laptop:aspect>
+        <laptop:aspect>POWER_SUPPLY#USABILITY</laptop:aspect>
+        <laptop:aspect>SHIPPING#USABILITY</laptop:aspect>
+        <laptop:aspect>SOFWARE#USABILITY</laptop:aspect>
+        <laptop:aspect>SUPPORT#USABILITY</laptop:aspect>
+        <laptop:aspect>WARRANTY#USABILITY</laptop:aspect>
+        <laptop:lex>usability</laptop:lex>
+        <laptop:lex>use</laptop:lex>
+        <laptop:lex>utility</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityNegativeSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityNegativeSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityPositiveSentiment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityPositiveSentiment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SentimentMention"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityMention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Usb -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Usb">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention"/>
+        <laptop:lex>usb</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Useful -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Useful">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#UsabilityPositiveSentiment"/>
+        <laptop:lex>useful</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Value -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Value">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        <laptop:lex>value</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Vga -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Vga">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortsMention"/>
+        <laptop:lex>vga</laptop:lex>
+        <laptop:lex>video graphics array</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Video -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Video">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GraphicsMention"/>
+        <laptop:lex>video</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Vivid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Vivid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#DisplayPositiveSentiment"/>
+        <laptop:lex>vivid</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Voltage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Voltage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Power_supplyMention"/>
+        <laptop:lex>voltage</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wait -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wait">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SupportMention"/>
+        <laptop:lex>wait</laptop:lex>
+        <laptop:lex>waitingtime</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#WarrantyMention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#WarrantyMention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ServiceMention"/>
+        <laptop:aspect>WARRANTY#DESIGN_FEATURES</laptop:aspect>
+        <laptop:aspect>WARRANTY#GENERAL</laptop:aspect>
+        <laptop:aspect>WARRANTY#OPERATION_PERFORMANCE</laptop:aspect>
+        <laptop:aspect>WARRANTY#PRICE</laptop:aspect>
+        <laptop:aspect>WARRANTY#QUALITY</laptop:aspect>
+        <laptop:aspect>WARRANTY#USABILITY</laptop:aspect>
+        <laptop:lex>guarantee</laptop:lex>
+        <laptop:lex>warranty</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Weight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Weight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PortabilityMention"/>
+        <laptop:lex>weight</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wifi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wifi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ConnectivityMention"/>
+        <laptop:lex>wi-fi</laptop:lex>
+        <laptop:lex>wifi</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Windows -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Windows">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#OsMention"/>
+        <laptop:lex>ios</laptop:lex>
+        <laptop:lex>windows</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Power_supplyMention"/>
+        <laptop:lex>wire</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wireless -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wireless">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#MousePositiveSentiment"/>
+        <laptop:lex>wireless</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wonderful -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Wonderful">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#GenericPositiveSentiment"/>
+        <laptop:lex>wonderful</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ugly -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ugly">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Design_featuresNegativeSentiment"/>
+        <laptop:lex>hideous</laptop:lex>
+        <laptop:lex>ugly</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#$ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#$">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        <laptop:lex>$</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#4K -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#4K">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Resolution"/>
+        <laptop:lex>4K</laptop:lex>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fast"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Operation_performanceMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fast"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ShippingMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fast"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SpaceMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Fast"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SupportMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#High"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#High"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#QualityMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Low"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#PriceMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Positive"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Low"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#QualityMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Operation_performanceMention"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Slow"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#ShippingMention"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Slow"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Slow"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SpaceMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+    </owl:Class>
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Slow"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#SupportMention"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/karoliina/ontologies/2017/4/laptop#Negative"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

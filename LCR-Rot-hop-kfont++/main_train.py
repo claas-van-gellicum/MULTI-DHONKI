@@ -23,24 +23,39 @@ def main():
     parser.add_argument("--year", default=2016, type=int, help="The year of the dataset (2015 or 2016)")
     parser.add_argument("--hops", default=3, type=int,
                         help="The number of hops to use in the rotatory attention mechanism")
+    parser.add_argument("--ont-hops", default=0, type=int, 
+                       help="The number of hops to use in ontology, including the validation process")
+    parser.add_argument("--gamma", default=0.0, type=float,
+                       help="The gamma value for ontology hop weighting")
+    parser.add_argument("--domain", default="restaurants", type=str,
+                       help="The domain to use for the model (restaurants or laptops)")
+    parser.add_argument("--val-injection", action="store_true",
+                       help="Whether to use knowledge injection or not")
+    parser.add_argument("--no-knowledge-injection", action="store_true",
+                       help="Whether to use knowledge injection or not")
     args = parser.parse_args()
 
     year: int = args.year
     lcr_hops: int = args.hops
-    dropout_rate = 0.4
-
-    learning_rate = 0.01
-    momentum = 0.85
-    weight_decay = 0.0001
+    ont_hops: int = args.ont_hops
+    gamma: float = args.gamma
+    domain: str = args.domain
+    val_injection: bool = args.val_injection
+    no_knowledge_injection: bool = args.no_knowledge_injection
+    
+    dropout_rate = 0.5
+    learning_rate = 0.1
+    momentum = 0.95
+    weight_decay = 0.001
     n_epochs = 100
-    batch_size = 32
+    batch_size = 48
 
 
     device = torch.device('cuda' if torch.cuda.is_available() else
                           'mps' if torch.backends.mps.is_available() else 'cpu')
 
     # create training anf validation DataLoader
-    train_dataset = EmbeddingsDataset(year=year, device=device, phase="Train")
+    train_dataset = EmbeddingsDataset(year=year, device=device, phase="Train", domain=domain)
     print(f"Using {train_dataset} with {len(train_dataset)} obs for training")
     train_idx, validation_idx = train_validation_split(train_dataset)
 
@@ -53,7 +68,7 @@ def main():
     validation_loader = DataLoader(validation_subset, collate_fn=lambda batch: batch)
 
     # Train model
-    model = LCRRotHopPlusPlus(hops=lcr_hops, dropout_prob=dropout_rate).to(device)
+    model = LCRRotHopPlusPlus(hops=lcr_hops, dropout_prob=dropout_rate, ont_hops=ont_hops, gamma=gamma, domain=domain).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=momentum, weight_decay=weight_decay)
 
@@ -61,13 +76,13 @@ def main():
     best_state_dict: Optional[dict] = None
     epochs_progress = tqdm(range(n_epochs), unit='epoch')
 
-    patience = 20
+    patience = 15
 
     models_dir = os.path.join("data", "modelsLayers")
     os.makedirs(models_dir, exist_ok=True)
 
     model_path = os.path.join(models_dir,
-                              f"{year}_LCR_hops{lcr_hops}_dropout{stringify_float(dropout_rate)}_acc{stringify_float(best_accuracy)}_earlyKnowTrain0-2")
+                         f"new_{year}{domain}_ont{ont_hops}_val{val_injection}_noinjection{no_knowledge_injection}_gamma{stringify_float(gamma)}_dropout{stringify_float(dropout_rate)}_acc{stringify_float(best_accuracy)}.pt")
     early_stopping = EarlyStopping(patience=patience, verbose=True, path=model_path)
 
     valid_losses = []
@@ -85,8 +100,7 @@ def main():
             for i, batch in enumerate(epoch_progress):
                 torch.set_default_device(device)
 
-                # Indicate in which layer the knowledge should be added
-                if i == 0 and epoch == 0:
+                if i == 0 and epoch == 0 or no_knowledge_injection:
                     knowledge_layers = range(-2,-1)
                 else:
                     knowledge_layers = range(9,12)
@@ -111,7 +125,7 @@ def main():
 
                 torch.set_default_device('cpu')
 
-            # Validation loss
+            # ---------Validation loss---------
             epoch_progress = tqdm(validation_loader, unit='obs', leave=False)
             model.eval()
 
@@ -125,7 +139,13 @@ def main():
                 with torch.inference_mode():
                     (sentence, target_index_start, target_index_end), label, hops = data[0]
 
-                    output: torch.Tensor = model(sentence, target_index_start, target_index_end, knowledge_layers = range(-2,-1))
+                    if val_injection:
+                        knowledge_layers = range(9,12)
+                    else:
+                        knowledge_layers = range(-2,-1)
+                        
+                    output: torch.Tensor = model(sentence, target_index_start, target_index_end, knowledge_layers = knowledge_layers)
+
                     val_n_correct += (output.argmax(0) == label).type(torch.int).item()
                     val_n += 1
 
@@ -139,6 +159,7 @@ def main():
                         f"Test Loss: {val_loss / val_steps:.3f}, Test Acc.: {val_n_correct / val_n:.3f}")
 
                 torch.set_default_device('cpu')
+
 
             validation_accuracy = val_n_correct / val_n
             valid_loss = np.average(valid_losses)
@@ -161,8 +182,9 @@ def main():
     if best_state_dict is not None:
         models_dir = os.path.join("data", "modelsLayers")
         os.makedirs(models_dir, exist_ok=True)
+        domain_str = f"_domain{domain}"
         model_path = os.path.join(models_dir,
-                                  f"{year}_LCR_hops{lcr_hops}_dropout{stringify_float(dropout_rate)}_acc{stringify_float(best_accuracy)}_KnowTrain0-2.pt")
+                                  f"new_{year}{domain}_ont{ont_hops}_val{val_injection}_noinjection{no_knowledge_injection}_gamma{stringify_float(gamma)}_dropout{stringify_float(dropout_rate)}_acc{stringify_float(best_accuracy)}.pt")
         with open(model_path, "wb") as f:
             torch.save(best_state_dict, f)
             print(f"Saved model to {model_path}")
@@ -170,3 +192,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

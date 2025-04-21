@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, Iterable
 
 import torch
 from torch import nn
@@ -58,11 +58,15 @@ class HierarchicalAttention(nn.Module):
 
 
 class LCRRotHopPlusPlus(nn.Module):
-    def __init__(self, dropout_prob=0.7, output_size=3, input_size=768, hidden_size=300, hops=3,
-                 gamma: Optional[int] = None):
+    def __init__(self, dropout_prob=0.7, output_size=3, input_size=768, hidden_size=300, hops=3, domain: str = "",
+                 gamma: Optional[float] = None, ont_hops: int = 0, device: Optional[torch.device] = None):
         super().__init__()
         self.hops = hops
         self.gamma = gamma
+        self.ont_hops = ont_hops
+        self.domain = domain
+        self.device = device if device else torch.device('cuda' if torch.cuda.is_available() else
+                                                       'mps' if torch.backends.mps.is_available() else 'cpu')
 
         if hops < 1:
             raise ValueError("Invalid number of hops")
@@ -84,8 +88,6 @@ class LCRRotHopPlusPlus(nn.Module):
 
         self.output_linear = nn.Linear(in_features=4 * self.representation_size, out_features=output_size)
         self.softmax = nn.Softmax(0)
-        self.device = torch.device('cuda' if torch.cuda.is_available() else
-                                   'mps' if torch.backends.mps.is_available() else 'cpu')
 
         self.dense1 = nn.Linear(3072 + 400, 3072)
         self.dense2 = nn.Linear(768 + 400, 768)
@@ -105,7 +107,22 @@ class LCRRotHopPlusPlus(nn.Module):
         :return: [1 x output_size] output probabilities for each class
         """
 
-        embedding_data = generate_OneEmbedding(embeddings_layer=EmbeddingsLayer(device=self.device, dense1=self.dense1, dense2=self.dense2, proj1=self.proj1, proj2=self.proj2), sentence=sentence, target_from=left_index, target_to=right_index, knowledge_layers=knowledge_layers)
+        embedding_data = generate_OneEmbedding(
+            embeddings_layer=EmbeddingsLayer(
+                device=self.device,
+                dense1=self.dense1,
+                dense2=self.dense2,
+                proj1=self.proj1,
+                proj2=self.proj2,
+                domain=self.domain,
+                ont_hops=self.ont_hops,
+                gamma=self.gamma
+            ),
+            sentence=sentence,
+            target_from=left_index,
+            target_to=right_index,
+            knowledge_layers=knowledge_layers
+        )
         embeddings: torch.Tensor = embedding_data['embeddings']
         target_index_start = embedding_data['target_left_index']
         target_index_end = embedding_data['target_right_index']
@@ -119,20 +136,20 @@ class LCRRotHopPlusPlus(nn.Module):
         n_right, _ = right.size()
 
         # determine weights and scale embeddings
-        if self.gamma is not None and hops is not None:
-            weights: torch.Tensor = hops
-            for i, n_hops in enumerate(weights):
-                if n_hops < 0:
-                    weights[i] = 1
-                else:
-                    weights[i] = 1 / (self.gamma + n_hops)
-            weights_left: torch.Tensor = weights[:n_left]
-            weights_target: torch.Tensor = weights[n_left:(n_left + n_target)]
-            weights_right: torch.Tensor = weights[(n_left + n_target):]
+        # if self.gamma is not None and hops is not None:
+        #     weights: torch.Tensor = hops
+        #     for i, n_hops in enumerate(weights):
+        #         if n_hops < 0:
+        #             weights[i] = 1
+        #         else:
+        #             weights[i] = 1 / (self.gamma + n_hops)
+        #     weights_left: torch.Tensor = weights[:n_left]
+        #     weights_target: torch.Tensor = weights[n_left:(n_left + n_target)]
+        #     weights_right: torch.Tensor = weights[(n_left + n_target):]
 
-            left = torch.einsum('i,ij->ij', weights_left, left)
-            target = torch.einsum('i,ij->ij', weights_target, target)
-            right = torch.einsum('i,ij->ij', weights_right, right)
+        #     left = torch.einsum('i,ij->ij', weights_left, left)
+        #     target = torch.einsum('i,ij->ij', weights_target, target)
+        #     right = torch.einsum('i,ij->ij', weights_right, right)
 
         # calculate hidden states
         left_hidden_states: Optional[torch.Tensor]

@@ -4,12 +4,13 @@ from typing import Optional
 import torch
 from sklearn.model_selection import train_test_split
 from torch.utils.data import Dataset, DataLoader
+import numpy as np
 
 
 class EmbeddingsDataset(Dataset):
-    def __init__(self, year: int, phase='Train', device=torch.device('cpu'),
+    def __init__(self, year: int, domain: str = "restaurants", phase='Train', device=torch.device('cpu'),
                  empty_ok=False, enable_cache=True):
-        self.dir = f'data/embeddings/{year}-{phase}'
+        self.dir = f'data/embeddings/{year}-{domain}-{phase}'
         self.device = device
         self.length = len(glob.glob(f'{self.dir}/*.pt'))
         self.cache: dict[int, tuple] = {}
@@ -22,7 +23,7 @@ class EmbeddingsDataset(Dataset):
         if item in self.cache:
             return self.cache[item]
 
-        data: dict = torch.load(f"{self.dir}/{item}.pt", map_location=self.device)
+        data: dict = torch.load(f"{self.dir}/{item}.pt", map_location=self.device, weights_only=True)
         label: torch.Tensor = torch.tensor(data['label'], requires_grad=False, device=self.device)
         sentence = data['sentence']
         target_index_start: int = data['target_from']
@@ -47,13 +48,18 @@ class EmbeddingsDataset(Dataset):
         return f"EmbeddingsDataset({self.dir})"
 
 
-def train_validation_split(dataset: EmbeddingsDataset, validation_size=0.2, seed: Optional[float] = None):
-    # create list of all labels
-    loader = DataLoader(dataset, collate_fn=lambda batch: batch)
-    labels: list[int] = [data[0][1].item() for data in loader]
-
-    # create stratified train-validation split
-    train_idx, validation_idx = train_test_split(
-        range(len(dataset)), test_size=validation_size, shuffle=True, stratify=labels, random_state=seed)
-
+def train_validation_split(dataset, test_size=0.2, random_state=42):
+    # 获取所有样本的索引
+    indices = list(range(len(dataset)))
+    
+    # 随机打乱索引
+    np.random.seed(random_state)
+    np.random.shuffle(indices)
+    
+    # 计算验证集的样本数量
+    split = int(np.floor(test_size * len(dataset)))
+    
+    # 划分训练集和验证集
+    train_idx, validation_idx = indices[split:], indices[:split]
+    
     return train_idx, validation_idx

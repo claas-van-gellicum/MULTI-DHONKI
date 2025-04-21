@@ -11,6 +11,7 @@ from tqdm import tqdm
 from model import LCRRotHopPlusPlus
 from utils import EmbeddingsDataset, train_validation_split
 import numpy as np
+import json
 from pytorchtools import EarlyStopping
 
 
@@ -24,32 +25,38 @@ def main():
     parser.add_argument("--year", default=2014, type=int, help="The year of the dataset (2015 or 2016)")
     parser.add_argument("--hops", default=3, type=int,
                         help="The number of hops to use in the rotatory attention mechanism")
-    #default is None
+    parser.add_argument("--domain", default="Restaurant", help="The domain of the dataset (Restaurant or Laptop)")
     parser.add_argument("--ont-hops", default= None, type=int, required=False,
                         help="The number of hops in the ontology to use")
     #default is None
-    parser.add_argument("--val-ont-hops", default=0, type=int, required=False,
+    parser.add_argument("--val-ont-hops", default=None, type=int, required=False,
                         help="The number of hops to use in the validation phase, this option overrides the --ont-hops option.")
     args = parser.parse_args()
 
     year: int = args.year
+    domain: str = args.domain
 
     lcr_hops: int = args.hops
     ont_hops: Optional[int] = args.ont_hops
     val_ont_hops: Optional[int] = args.val_ont_hops
 
-    # Specify parameters
-    dropout_rate = 0.5
-    learning_rate = 0.09
-    momentum =  0.85
-    weight_decay = 0.00001
+    # Load hyperparameters from the corresponding hyperparams.json file
+    checkpoint_dir = f"data/checkpoints/{domain}-{year}_ont_hops{ont_hops}_val_ont_hops{val_ont_hops}"
+    
+    with open(f"{checkpoint_dir}/hyperparams.json", "r") as f:
+        hyperparams = json.load(f)
+        # The hyperparameters are stored in the same order as they are unpacked in main_hyperparam.py
+        learning_rate, dropout_rate, momentum, weight_decay, lcr_hops, gamma = hyperparams
+
+
+    #  These parameters remain constant for all models
     n_epochs = 100
     batch_size = 32
 
     device = torch.device('cuda' if torch.cuda.is_available() else
                           'mps' if torch.backends.mps.is_available() else 'cpu')
 
-    # create training anf validation DataLoader
+    # create training and validation DataLoader
     train_dataset = EmbeddingsDataset(year=year, device=device, phase="Train")
     print(f"Using {train_dataset} with {len(train_dataset)} obs for training")
     train_idx, validation_idx = train_validation_split(train_dataset)
@@ -75,7 +82,7 @@ def main():
     validation_loader = DataLoader(validation_subset, collate_fn=lambda batch: batch)
 
     # Train model
-    model = LCRRotHopPlusPlus(hops=lcr_hops, dropout_prob=dropout_rate).to(device)
+    model = LCRRotHopPlusPlus(hops=lcr_hops, dropout_prob=dropout_rate, gamma=gamma).to(device)
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.SGD(model.parameters(), lr=learning_rate, momentum=momentum, weight_decay=weight_decay)
 
@@ -90,7 +97,7 @@ def main():
     os.makedirs(models_dir, exist_ok=True)
 
     model_path = os.path.join(models_dir,
-                                  f"{year}_LCR_hops{lcr_hops}_dropout{stringify_float(dropout_rate)}_acc{stringify_float(best_accuracy)}.pt")
+                                 f"{domain}_{year}_ont-hops{stringify_float(ont_hops)}_val-ont-hops{stringify_float(val_ont_hops)}.pt")
     early_stopping = EarlyStopping(patience=patience, verbose=True, path = model_path)
 
     # to track the training loss as the model trains
@@ -212,7 +219,7 @@ def main():
         models_dir = os.path.join("data", "models")
         os.makedirs(models_dir, exist_ok=True)
         model_path = os.path.join(models_dir,
-                                  f"{year}_LCR_hops{lcr_hops}_dropout{stringify_float(dropout_rate)}_acc{stringify_float(best_accuracy)}.pt")
+                                  f"{domain}_{year}_ont-hops{stringify_float(ont_hops)}_val-ont-hops{stringify_float(val_ont_hops)}.pt")
         with open(model_path, "wb") as f:
             torch.save(best_state_dict, f)
             print(f"Saved model to {model_path}")

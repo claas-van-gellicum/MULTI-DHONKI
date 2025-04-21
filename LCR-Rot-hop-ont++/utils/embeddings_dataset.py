@@ -9,9 +9,9 @@ from torch.utils.data import Dataset, DataLoader
 
 
 class EmbeddingsDataset(Dataset):
-    def __init__(self, year: int, phase='Train', ont_hops: Optional[int] = None, device=torch.device('cpu'),
+    def __init__(self, year: int, phase='Train', domain="Restaurant", ont_hops: Optional[int] = None, device=torch.device('cpu'),
                  empty_ok=False, enable_cache=True, use_vm=True, use_soft_pos=True):
-        self.dir = f'data/embeddings/{year}-{phase}'
+        self.dir = f'data/embeddings/{domain}_{year}-{phase}'
         if ont_hops is not None:
             self.dir += f"_hops-{ont_hops}"
         if not use_vm:

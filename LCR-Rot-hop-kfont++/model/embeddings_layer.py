@@ -12,7 +12,8 @@ print()
 
 
 class EmbeddingsLayer:
-    def __init__(self, dense1, dense2, proj1, proj2,
+    def __init__(self, dense1, dense2, proj1, proj2, domain,
+                 ont_hops=0, gamma=0.0,
                  device=torch.device('cpu')):
         super().__init__()
 
@@ -20,7 +21,7 @@ class EmbeddingsLayer:
         self.tokenizer: BertTokenizer = tokenizer
         self.model: BertModel = model.to(device)
         self.model.eval()
-        self.encoder = BertEncoder(self.model, dense1=dense1, dense2=dense2, proj1=proj1, proj2=proj2)
+        self.encoder = BertEncoder(self.model, dense1=dense1, dense2=dense2, proj1=proj1, proj2=proj2, domain=domain, ont_hops=ont_hops, gamma=gamma)
 
     def forward(self, sentence: str, target_start: int, target_end: int, knowledge_layers) -> tuple[
         torch.Tensor, tuple[int, int], Optional[torch.Tensor]

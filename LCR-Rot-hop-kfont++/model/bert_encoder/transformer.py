@@ -15,7 +15,7 @@ class TransformerLayer(nn.Module):
     multi-headed self-attention and feed forward layer.
     """
 
-    def __init__(self, args, layer, currentLayerIndex, dense1,dense2,proj1,proj2):
+    def __init__(self, args, layer, currentLayerIndex, dense1,dense2,proj1,proj2,domain, ont_hops=0, gamma=0.0):
         super(TransformerLayer, self).__init__()
         self.currentLayerIndex =currentLayerIndex
 
@@ -27,7 +27,7 @@ class TransformerLayer(nn.Module):
         self.layer_norm_1 = LayerNorm(args.hidden_size, layer.attention.output.LayerNorm)
         # Feed forward layer.
         self.feed_forward = PositionwiseFeedForward(
-            args.hidden_size, args.feedforward_size, layer, currentLayerIndex= self.currentLayerIndex, dense1=dense1, dense2=dense2, proj1=proj1, proj2=proj2
+            args.hidden_size, args.feedforward_size, layer, currentLayerIndex= self.currentLayerIndex, dense1=dense1, dense2=dense2, proj1=proj1, proj2=proj2, domain=domain, ont_hops=ont_hops, gamma=gamma
         )
 
         self.layer_norm_2 = LayerNorm(args.hidden_size, layer.output.LayerNorm)

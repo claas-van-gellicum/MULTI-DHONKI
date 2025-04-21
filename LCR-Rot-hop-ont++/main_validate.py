@@ -75,7 +75,7 @@ def main():
     parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument("--year", default=2015, type=int, help="The year of the dataset (2015 or 2016)")
     #default is None
-    parser.add_argument("--ont-hops", default= 0, type=int, required=False, help="The number of hops in the ontology")
+    parser.add_argument("--ont-hops", default= None, type=int, required=False, help="The number of hops in the ontology")
     parser.add_argument("--hops", default=3, type=int,
                         help="The number of hops to use in the rotatory attention mechanism")
     #default is None

@@ -1,44 +1,52 @@
-# Aspect-Based Sentiment Classification with the LCR-Rot-hop-ont-plus-plus neural network
-This code can be used to train and validate LCR-Rot-hop(-ont)++ models. The model is a neural network used for Aspect-Based Sentiment Classification and
-allows for injection knowledge from an Ontology. 
+# Aspect-Based Sentiment Classification with the LCR-Rot-hop-ont-plus-plus Neural Network
 
-## Before running the code
-- Set up environment:
-  - Create a conda environment with Python 3.10
-  - run `pip install -r requirements.txt` in your terminal 
-- Set up data
-  - the data and ontologies can be found at `data/raw`  
-  - for simplicity the SemEval 2014 laptop dataset is named "ABSA14_Restaurants_...."
+This repository contains code to train, validate, and evaluate LCR-Rot-hop-ont++ models for Aspect-Based Sentiment Classification (ABSC), with support for both restaurant and laptop domains. The model allows for knowledge injection from a domain ontology, and includes improvements for flexible domain configuration and end-to-end automation.
 
-## Training and validating process
-Note that this process works for the 2015 and 2016 dataset, in the case of the 2014 datasets some adaptations have to be made to the code. These adaptations are explained below. 
+## Environment Setup
 
-- Step 1: Run main_preprocess.py, adapt the year and the amount of ontology hops used as needed.
-- Step 2: Run main_hyperparam.py, this code optimizes the hyperparameters and must be run for every specific task before training. Adapt the year and the amount of ontology hops 
-          used  as needed (note specify the ontology hops used during training in line 80).
-- Step 3: Run main_train.py, use the hyperparameters of the previous step and adapt the year and the amount of ontology hops used as needed.
-- Step 4: Run main_validate.py, specify the --model "MODEL_PATH" when running and adapt the year and the amount of ontology hops used as needed. This code will provide the results 
-          for  the performance of the model as output. 
+1. Create a conda environment with Python 3.10  
+2. Install dependencies with: `pip install -r requirements.txt`
 
-## Statistical significance
-For assesing the statistical significance the following 2 steps have to be followed
 
-- Step 1: Run main_validate_bootstrap.py, running the code is similar to Step 4, however, 100 bootstraps are performend for which the accuracies are saved (change the file name for
-          how it's saved on line 136). The average accuracy is shown after running the code.
-- Step 2: Run Wilcoxon_Sign-Ranked_Test.py, change the bootstraps that are compared on line 23 and 24 before running the code.
+## Dataset & Ontology Setup
 
-## Adaption for the 2014 restaurant data
-For the SemEval 2014 restaurant dataset the training and validating process is the same as above, however, in Step 1 main_preprocess_restaurant_2014.py is used instead of main_preprocess.py.
+All datasets and ontologies are located in `data/raw/`. You do not need to download anything manually.
 
-## Adaption for the 2014 laptop data
-For the SemEval 2014 laptop dataset the training and validating process is the same as above, however, in Step 1 main_preprocess_laptop.py is used instead of main_preprocess.py. Furthermore, `model\ontology.py` has to be replaced by ontology_laptop.py (renaming the files is the easiest approach for this).
+## Switching Between Domains
 
-## Ontology hop weights as parameters
-To use the LCR-Rot-hop(-ont)++ model where the onotlogy hop weights are parameters of the model, `model\lcr_rot_hop_plus_plus.py` has to be replaced by lcr_rot_hop_plus_plus_hopweight_param.py (renaming the files is the easiest approach for this).
+This project supports both restaurant and laptop domains. To switch domains, the correct ontology loader must be configured. This is done via `ontology.py`.
+
+By default, `model/ontology.py` is configured for the restaurant domain. If you are working with the laptop domain, replace the contents of `model/ontology.py` with the contents of `model/ontology_laptop.py`.
+
+## Training and Evaluation Pipeline
+
+The training and validation process consists of four steps. Each step requires the configuration of parameters such as dataset year, ontology hops, and domain.
+
+### Step 1: Preprocessing
+
+Run `main_preprocess.py`. This step cleans the data and generates the embeddings. Specify the year, domain, phase in which to inject knowledge and the amount of ontology hops.
+
+### Step 2: Hyperparameter Optimization
+
+Run `main_hyperparam.py`. This script performs hyperparameter tuning for a specific dataset and ontology configuration. Specify the year, domain, and the number of hops to use in the training and validation phase. 
+
+### Step 3: Training
+
+Run `main_train.py`. This trains the model using the optimized hyperparameters obtained in step 2. Again, specify the year, domain, and the number of hops to use in the training and validation phase.
+
+### Step 4: Validation
+
+Run `main_validate.py`. This will evaluate the trained model on the test set and output accuracy, precision, recall, F1-score, and Brier score. Specify the path to the trained model. Also specify the year, domain and amount of ontology hops of the embeddings you want to test the trained model on.
+
+
+### Alternative: Running All Steps Automatically
+
+To automatically execute the entire pipeline for training and evaluating all model configurations, you can run `run_all.py`. This script sequentially performs preprocessing, hyperparameter tuning and training for all predefined combinations of domain, year, and ontology hops. This allows you to reproduce all results with a single command, except for obtaining validation results. Refer to `main_validate.py` as some parameters (such as gamma) need to be set manually.
 
 ## References
+
 Code is used from:
-- https://github.com/charlottevisser/LCR-Rot-hop-ont-plus-plus 
-- https://github.com/wesselvanree/LCR-Rot-hop-ont-plus-plus/tree/c8d18b8b847a0872bd66d496e00d7586fdffb3db.
-- Liu, W., Zhou, P., Zhao, Z., Wang, Z., Ju, Q., Deng, H., Wang, P.: K-BERT: Enabling language representation with knowledge graph. In: 34th AAAI Conference on Artificial Intelligence. vol. 34, pp. 2901–2908. AAAI Press (2020)
-- https://github.com/Bjarten/early-stopping-pytorch/blob/master/pytorchtools.py
+
+- https://github.com/charlottevisser/LCR-Rot-hop-ont-plus-plus  
+- https://github.com/wesselvanree/LCR-Rot-hop-ont-plus-plus  
+- https://github.com/StijnCoremans/LCR-Rot-hop-ont-plus-plus

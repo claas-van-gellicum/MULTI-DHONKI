@@ -1,6 +1,7 @@
 # https://github.com/wesselvanree/LCR-Rot-hop-ont-plus-plus
 
 """Utility functions that are specific to this ontology"""
+# Copy the correct code from ontology_restaurant.py or ontology_laptop.py into this file
 
 from rdflib import URIRef, Graph
 
@@ -18,7 +19,7 @@ def find_uri_for(lex: str, ontology: Graph) -> URIRef | None:
 
     result = ontology.query(f"""
                 SELECT ?subject
-                {{ ?subject restaurant1:lex "{lex}" }}
+                {{ ?subject restaurant:lex "{lex}" }}
                 LIMIT 1
                 """)
     for row in result:

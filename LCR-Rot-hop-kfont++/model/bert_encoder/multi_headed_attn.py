@@ -4,8 +4,7 @@ from typing import Optional
 
 import torch
 import torch.nn as nn
-from transformers import BertLayer
-
+from transformers.models.bert.modeling_bert import BertLayer
 
 class MultiHeadedAttention(nn.Module):
     """
