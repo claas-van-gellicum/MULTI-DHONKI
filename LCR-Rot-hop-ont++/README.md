@@ -49,4 +49,4 @@ Code is used from:
 
 - https://github.com/charlottevisser/LCR-Rot-hop-ont-plus-plus  
 - https://github.com/wesselvanree/LCR-Rot-hop-ont-plus-plus  
-- https://github.com/stijncoremans/LCR-Rot-hop-ont-plus-plus
+- https://github.com/StijnCoremans/LCR-Rot-hop-ont-plus-plus
