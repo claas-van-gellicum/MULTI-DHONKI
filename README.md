@@ -5,7 +5,7 @@ This repository contains code to train, validate, and evaluate LCR-Rot-hop(-ont)
 ## Environment Setup
 
 1. Create a conda environment with Python 3.10  
-2. Install dependencies with: 'pip install -r requirements.txt'
+2. Install dependencies with: `pip install -r requirements.txt`
 
 
 ## Dataset & Ontology Setup
