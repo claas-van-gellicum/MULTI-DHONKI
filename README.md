@@ -1,4 +1,4 @@
-# Multi-Domain and -hop Ontology Knowledge Injection
+# Multi-Domain and -Hop Ontology Knowledge Injection
 
 This repository contains two model implementations for Aspect-Based Sentiment Classification with knowledge injection:
 
